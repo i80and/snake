@@ -11,11 +11,6 @@ WEST = 4
 NO_DIRECTION = 5
 FOOD = 6
 
-KEY_UP = 111
-KEY_RIGHT = 114
-KEY_DOWN = 116
-KEY_LEFT = 113
-
 
 def move_point(point, direction):
     x, y = point
@@ -208,13 +203,13 @@ class SnakeGUI:
         self.draw()
 
     def _on_key(self, event):
-        if event.char == 'w' or event.keycode == KEY_UP:
+        if event.char == 'w' or event.keysym == 'Up':
             self.direction = NORTH
-        elif event.char == 'd' or event.keycode == KEY_RIGHT:
+        elif event.char == 'd' or event.keysym == 'Right':
             self.direction = EAST
-        elif event.char == 's' or event.keycode == KEY_DOWN:
+        elif event.char == 's' or event.keysym == 'Down':
             self.direction = SOUTH
-        elif event.char == 'a' or event.keycode == KEY_LEFT:
+        elif event.char == 'a' or event.keysym == 'Left':
             self.direction = WEST
         elif event.char == ' ':
             self.paused = not self.paused
